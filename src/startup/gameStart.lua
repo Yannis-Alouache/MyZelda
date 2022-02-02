@@ -33,10 +33,10 @@ function gameStart()
 
     require("src/startup/require")
     requireAll()
+    spawnChest(100, 100)
 
     sounds.villageMusic:setVolume(0.3)
     sounds.swordSound:setVolume(0.3)
-    
     sounds.villageMusic:play()
 
 end

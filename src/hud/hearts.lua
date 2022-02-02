@@ -3,6 +3,7 @@ hearts = {}
 function hearts:draw()
     local scale = 3.5
     local width = sprites.hud.heart:getWidth() * scale + 4
+    local height = sprites.hud.heart:getHeight() * scale + 4
     local offset = 0
     local heartSprite = sprites.hud.heart
 
@@ -15,6 +16,11 @@ function hearts:draw()
         end
 
         offset = (i - 1) * width
-        love.graphics.draw(heartSprite, 30 + offset, 30, 0, scale)
+        if i > 7 then
+            offset = offset - (width * 7);
+            love.graphics.draw(heartSprite, 30 + offset, 30 + height, 0, scale)
+        else
+            love.graphics.draw(heartSprite, 30 + offset, 30, 0, scale)
+        end
     end
 end

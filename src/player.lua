@@ -37,7 +37,7 @@ player.anim = player.animations.down
 
 player:setLinearVelocity(-100, 0)
 
-function player:update(dt)
+function player:update(dt)  
 
     if player.state == 0 then
     

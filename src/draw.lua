@@ -20,6 +20,7 @@ function drawCamera()
 
     walls:draw()
     bombs:draw()
+    treasures:draw()
     player:draw()
     effects:draw()
     particles:draw()
@@ -28,4 +29,10 @@ end
 
 function drawAfterCamera()
     hearts:draw()
+
+    love.graphics.setColor(0,0,0)
+    love.graphics.rectangle("fill", 30, 75, 220, 100)
+    love.graphics.setColor(255,255,255)
+    love.graphics.print("Player X = " .. math.floor(player:getX()), 50, 100, 0, 2)
+    love.graphics.print("Player Y = " .. math.floor(player:getY()), 50, 130, 0, 2)
 end

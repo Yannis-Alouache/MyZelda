@@ -46,7 +46,10 @@ function love.keypressed(key)
 
     if key == 'p' then
         player.health = player.health + 0.5
-        print(player.health)
+    end
+
+    if key == '^' then
+        player.maxHealth = player.maxHealth + 1
     end
 
     if key == 'l' then

@@ -8,6 +8,7 @@ sprites.effects.rock = love.graphics.newImage('sprites/effects/rock.png')
 sprites.effects.fuseSmoke = love.graphics.newImage('sprites/effects/fuseSmoke.png')
 sprites.environment = {}
 sprites.environment.breakableRock = love.graphics.newImage('sprites/environment/breakableRock.png')
+sprites.environment.treasureSheet = love.graphics.newImage('sprites/environment/treasureSheet.png')
 sprites.items = {}
 sprites.items.bomb = love.graphics.newImage('sprites/items/bomb.png')
 sprites.items.bombSheet = love.graphics.newImage('sprites/items/bombSheet.png')
