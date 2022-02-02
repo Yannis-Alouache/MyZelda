@@ -563,6 +563,7 @@ end
 
 function World:queryCircleArea(x, y, radius, collision_class_names)
     if not collision_class_names then collision_class_names = {'All'} end
+    print(self)
     if self.query_debug_drawing_enabled then table.insert(self.query_debug_draw, {type = 'circle', x = x, y = y, r = radius, frames = self.draw_query_for_n_frames}) end
     
     local colliders = self:_queryBoundingBox(x-radius, y-radius, x+radius, y+radius) 

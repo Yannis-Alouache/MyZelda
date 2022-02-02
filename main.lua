@@ -11,7 +11,7 @@ function love.load()
     loadMap("test")
 
     dj.volume("effect", 1)
-
+    spawnChest(100, 100)
 end
 
 function love.update(dt)
@@ -34,7 +34,7 @@ function love.draw()
     --local debug = require "src/debug"
     --debug:d()
 end
-
+score = 0
 function love.keypressed(key)
     if key == 'c' then
         colliderToggle = not (colliderToggle and true);
@@ -58,6 +58,30 @@ function love.keypressed(key)
 
     if key == 'escape' then
         love.event.quit()
+    end
+
+    if key == 'a' then
+        local recSize = 15
+        local px = player:getX()
+        local py = player:getY()
+
+        if player.dir == "up" then
+            py = py - 10
+        elseif player.dir == "down" then
+            py = py + 10
+        elseif player.dir == "left" then
+            px = px - 10
+        elseif player.dir == "right" then
+            px = px + 10
+        end
+
+        local colliders = world:queryRectangleArea(px - recSize / 2, py - recSize / 2, recSize, recSize, {'Chest'})
+
+        if #colliders > 0 then
+            for _, chest in ipairs(colliders) do
+                chest.state = 2
+            end
+        end
     end
 
     if key == 'z' then

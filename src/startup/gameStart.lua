@@ -30,10 +30,10 @@ function gameStart()
     -- This second world is for particles, and has downward gravity
     particleWorld = windfield.newWorld(0, 250, false)
     particleWorld:setQueryDebugDrawing(true)
+    
 
     require("src/startup/require")
     requireAll()
-    spawnChest(100, 100)
 
     sounds.villageMusic:setVolume(0.3)
     sounds.swordSound:setVolume(0.3)
